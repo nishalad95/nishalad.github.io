@@ -2257,7 +2257,7 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #777;
-				background-image: url("../../bkg_desktop.gif");
+				background-image: url("../../images/bkg_desktop.gif");
 			}
 
 			#main > section.two {
@@ -2615,7 +2615,7 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #777;
-				background-image: url("../../bkg_mobile.gif");
+				background-image: url("../../images/bkg_mobile.gif");
 				background-size: 180%;
 			}
 
