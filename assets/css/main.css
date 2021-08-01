@@ -2250,7 +2250,7 @@ input, select, textarea {
 			#main > section.cover {
 				/* padding: 10em 0; */
 				background-size: cover;
-				background-size: 150%;
+				background-size: 140%;
 				background-position: center center;
 				background-repeat: no-repeat;
 			}
