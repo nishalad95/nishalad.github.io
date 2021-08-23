@@ -61,12 +61,13 @@
 			<div id="main">
 
 				<!-- Home -->
-					<section id="home" class="one dark cover">
-						<div class="container">
+					<section id="home" class="one dark cover" style="position:relative; padding:4rem 2rem">
+						<canvas id="jumbotron-anim" style="position:absolute; top:0; left:0; width:100%; height:100%"></canvas>
+						<div class="container" style="position:relative">
 
 							<header>
 
-								<h3 class="alt">Hi I'm Nisha!</h3>
+								<h2 class="alt">Hi I'm Nisha!</h2>
 								<p>I'm an aspiring Data Scientist, Women in STEM advocate & ML engineer based in London. 
 								Currently in the penultimate year of my PhD @ <a href="https://www.ucl.ac.uk" target="_blank">UCL</a>, I am specializing in pattern 
 								recognition using GNNs @ the <a href="https://atlas.cern" target="_blank">ATLAS</a> detector. My background is in Physics 
@@ -75,6 +76,7 @@
 							</header>
 
 						</div>
+						<!-- <canvas id="jumbotron-anim" style="position:absolute; top:0; left:0; width:100%; height:100%"> -->
 					</section>
 
 				<!-- ML Projects & Articles -->
@@ -119,15 +121,11 @@
 							<p>Coming soon...</p>
 
 							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
 							<p>Working @ CERN</p>
 							
 							<p>Research Overview</p>
-
 							<p>Software Development</p>
-
 							<p>Data Analysis</p>
-
 							<p>Selected Written Work</p> -->
 
 							<div class="row">
@@ -311,16 +309,13 @@
 				<!-- Contact -->
 					<!-- <section id="contact" class="four">
 						<div class="container">
-
 							<header>
 								<h2>Contact</h2>
 							</header>
-
 							<p>Elementum sem parturient nulla quam placerat viverra
 							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
 							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
 							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
 							<form method="post" action="#">
 								<div class="row">
 									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
@@ -333,7 +328,6 @@
 									</div>
 								</div>
 							</form>
-
 						</div>
 					</section> -->
 
@@ -351,13 +345,26 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="assets/js/jumbotron.js"></script>
+
+		<script>
+			startAnimation();
+		</script>
+
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
