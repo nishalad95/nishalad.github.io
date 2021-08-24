@@ -15,17 +15,14 @@ var startAnimation = function(){
           r: 0,
           alpha: 1,
           phase: 0,
-        //   hex_color: ['#ffc559', '#21918c', '#3b528b', '#5ec962']
           hex_color: ['#ffc559', '#E9D2F4', '#49306B']
-
        },
        R = 5,
-       balls = [],
-    
+       balls = [], 
+       dis_limit = 260,
+
     // Line
        link_line_width = 0.8,
-       dis_limit = 225,
-    //    dis_limit = 200,
        add_mouse_point = true,
        mouse_in = false,
        mouse_ball = {
@@ -36,6 +33,10 @@ var startAnimation = function(){
           r: R,
           type: 'mouse'
        };
+
+       if ($(window).width() <= 961) {
+            dis_limit = 150
+       }
     
     // Random speed
     function getRandomSpeed(pos){
@@ -157,9 +158,6 @@ var startAnimation = function(){
     
                if(fraction < 1){
                    alpha = (1 - 0.75 * fraction).toString();
-    
-                //    ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
-                //    ctx.strokeStyle = 'rgba(77,83,89, '+alpha+')';
                    ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
                    ctx.lineWidth = link_line_width;
     
@@ -199,9 +197,7 @@ var startAnimation = function(){
       }
     
       ctx.clearRect(0, 0, can_w, can_h);
-    
-    //   renderBalls();
-    
+        
       renderLines();
 
       renderBalls();
