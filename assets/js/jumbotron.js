@@ -33,6 +33,9 @@ var startAnimation = function(){
           r: R,
           type: 'mouse'
        };
+       if ($(window).width() <= 961) {
+        dis_limit = 150;
+       }
     
     // Random speed
     function getRandomSpeed(pos){
