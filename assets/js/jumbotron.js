@@ -35,7 +35,7 @@ var startAnimation = function(){
        };
 
        if ($(window).width() <= 961) {
-            dis_limit = 150
+            dis_limit = 100
        }
     
     // Random speed
