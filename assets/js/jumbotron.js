@@ -33,10 +33,6 @@ var startAnimation = function(){
           r: R,
           type: 'mouse'
        };
-
-       if ($(window).width() <= 961) {
-            dis_limit = 100
-       }
     
     // Random speed
     function getRandomSpeed(pos){
@@ -193,7 +189,11 @@ var startAnimation = function(){
         }
     
       if (balls.length == 0) {
-        initBalls(30);
+        num_balls = 30;
+        if ($(window).width() <= 961) {
+            num_balls = 15;
+        }
+        initBalls(num_balls);
       }
     
       ctx.clearRect(0, 0, can_w, can_h);
