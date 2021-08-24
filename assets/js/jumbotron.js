@@ -15,22 +15,17 @@ var startAnimation = function(){
           r: 0,
           alpha: 1,
           phase: 0,
-        //   hex_color: ['#440154', '#3B528B', '#21918C', '#5CC863', '#FDE725'],
-          hex_color: ['#ffc559', '#f5e7b3', '#eda6be']
-        //   rgb_color: ['rgba(255,197,89,0.95)', 'rgba(33,145,140,0.95)']
+        //   hex_color: ['#ffc559', '#21918c', '#3b528b', '#5ec962']
+          hex_color: ['#ffc559', '#E9D2F4', '#49306B']
 
        },
-    //    ball_color = {
-    //        r: 255,
-    //        g: 197,
-    //        b: 89
-    //    },
        R = 5,
        balls = [],
     
     // Line
        link_line_width = 0.8,
-       dis_limit = 260,
+       dis_limit = 225,
+    //    dis_limit = 200,
        add_mouse_point = true,
        mouse_in = false,
        mouse_ball = {
@@ -44,8 +39,8 @@ var startAnimation = function(){
     
     // Random speed
     function getRandomSpeed(pos){
-        var  min = -.75,
-           max = .75;
+        var  min = -.4,
+           max = .4;
         switch(pos){
             case 'top':
                 return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
@@ -164,6 +159,7 @@ var startAnimation = function(){
                    alpha = (1 - 0.75 * fraction).toString();
     
                 //    ctx.strokeStyle = 'rgba(150,150,150,'+alpha+')';
+                //    ctx.strokeStyle = 'rgba(77,83,89, '+alpha+')';
                    ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
                    ctx.lineWidth = link_line_width;
     
