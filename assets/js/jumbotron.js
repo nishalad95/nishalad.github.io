@@ -174,15 +174,27 @@ var startAnimation = function(){
     function getDisOf(b1, b2){
         var  delta_x = Math.abs(b1.x - b2.x),
            delta_y = Math.abs(b1.y - b2.y);
-    
         return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
     }
     
     // add balls if there a little balls
     function addBallIfy(){
-        if(balls.length < 20){
+        window_width = $(window).width();
+
+        if (window_width <= 768 && balls.length < 12) {
+            // small screens tablets, phones
+            balls.push(getRandomBall());
+        } else if (window_width > 1024 && balls.length < 35) {
+            // large screens desktops
+            balls.push(getRandomBall());
+        } else if (balls.length < 20) {
+            // default
             balls.push(getRandomBall());
         }
+
+        // if(balls.length < 20){
+        //     balls.push(getRandomBall());
+        // }
     }
     
     // Render
@@ -190,11 +202,16 @@ var startAnimation = function(){
         if (Date.now() - lastCanvasSizeUpdate > 1000) {
             updateCanvasSize();
         }
-    
       if (balls.length == 0) {
+        // laptop
         num_balls = 30;
-        if ($(window).width() <= 961) {
+        window_width = $(window).width();
+        if (window_width <= 768) {
+            // small screens tablets, phones
             num_balls = 15;
+        } else if (window_width > 1024){
+            // large screens desktops
+            num_balls = 40;
         }
         initBalls(num_balls);
       }
