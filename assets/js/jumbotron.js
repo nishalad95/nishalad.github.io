@@ -33,14 +33,41 @@ var startAnimation = function(){
           r: R,
           type: 'mouse'
        };
-       if ($(window).width() <= 961) {
-        dis_limit = 150;
+
+       // variable distance limit edge connections
+       window_width = $(window).width();
+       if (window_width <= 500) {
+           // small screens phones
+           dis_limit = 150;
+       } else if (window_width <= 768) {
+            // small screens tablets
+            dis_limit = 200;
+       } else if (window_width < 1024 && window_width > 768) {
+            // laptops
+            dis_limit = 260;
+       } else if (window_width >= 1024) {
+            // large screens desktops
+            dis_limit = 300;
        }
     
+
     // Random speed
     function getRandomSpeed(pos){
         var  min = -.4,
            max = .4;
+
+        // variable speed
+        window_width = $(window).width();
+        if (window_width < 1024 && window_width > 768) {
+            // laptops
+            min = -.5,
+            max = .5;
+        } else if (window_width >= 1024) {
+            // large screens desktops
+            min = -1.,
+            max = 1.;
+        }
+        
         switch(pos){
             case 'top':
                 return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
@@ -156,7 +183,7 @@ var startAnimation = function(){
                fraction = getDisOf(balls[i], balls[j]) / dis_limit;
     
                if(fraction < 1){
-                   alpha = (1 - 0.75 * fraction).toString();
+                   alpha = (1 - 0.8 * fraction).toString();
                    ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
                    ctx.lineWidth = link_line_width;
     
@@ -181,8 +208,11 @@ var startAnimation = function(){
     function addBallIfy(){
         window_width = $(window).width();
 
-        if (window_width <= 768 && balls.length < 12) {
-            // small screens tablets, phones
+        if (window_width <= 500 && balls.length < 12) {
+            // small screens phones
+            balls.push(getRandomBall());
+        } else if (window_width <= 768 && balls.length < 20) {
+            // small screens tablets
             balls.push(getRandomBall());
         } else if (window_width > 1024 && balls.length < 35) {
             // large screens desktops
@@ -192,9 +222,6 @@ var startAnimation = function(){
             balls.push(getRandomBall());
         }
 
-        // if(balls.length < 20){
-        //     balls.push(getRandomBall());
-        // }
     }
     
     // Render
@@ -203,16 +230,23 @@ var startAnimation = function(){
             updateCanvasSize();
         }
       if (balls.length == 0) {
-        // laptop
-        num_balls = 30;
+        // variable number of balls
         window_width = $(window).width();
-        if (window_width <= 768) {
-            // small screens tablets, phones
-            num_balls = 15;
-        } else if (window_width > 1024){
+        num_balls = 30;
+        if (window_width <= 500) {
+           // small screens phones
+           num_balls = 15;
+        } else if (window_width <= 768) {
+            // small screens tablets
+            num_balls = 25;
+        } else if (window_width < 1024 && window_width > 768) {
+            // laptops
+            num_balls = 30;
+        } else if (window_width >= 1024) {
             // large screens desktops
             num_balls = 40;
         }
+
         initBalls(num_balls);
       }
     
