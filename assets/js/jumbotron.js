@@ -13,11 +13,11 @@ var startAnimation = function(){
           vx: 0,
           vy: 0,
           r: 0,
-          alpha: 1,
+          alpha: 0.1,
           phase: 0,
           hex_color: ['#ffc559', '#E9D2F4', '#49306B']
        },
-       R = 5,
+       R = 4,
        balls = [], 
        dis_limit = 260,
 
@@ -60,12 +60,12 @@ var startAnimation = function(){
         window_width = $(window).width();
         if (window_width < 1024 && window_width > 768) {
             // laptops
-            min = -.4,
-            max = .4;
+            min = -.025,
+            max = .025;
         } else if (window_width >= 1024) {
             // large screens desktops
-            min = -1.,
-            max = 1.;
+            min = -.7,
+            max = .7;
         }
         
         switch(pos){
@@ -103,7 +103,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('top')[0],
                     vy: getRandomSpeed('top')[1],
                     r: R,
-                    alpha: 0.7,
+                    alpha: 0.1,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -114,7 +114,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('right')[0],
                     vy: getRandomSpeed('right')[1],
                     r: R,
-                    alpha: 0.7,
+                    alpha: 0.1,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -125,7 +125,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('bottom')[0],
                     vy: getRandomSpeed('bottom')[1],
                     r: R,
-                    alpha: 0.7,
+                    alpha: 0.1,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -136,7 +136,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('left')[0],
                     vy: getRandomSpeed('left')[1],
                     r: R,
-                    alpha: 0.7,
+                    alpha: 0.1,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -150,7 +150,7 @@ var startAnimation = function(){
     function renderBalls(){
         Array.prototype.forEach.call(balls, function(b, i){
         //    idx = i % 3;
-           idx = 1;
+           idx = 0;
            ctx.fillStyle = ball.hex_color[idx];
            ctx.beginPath();
            ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
@@ -183,7 +183,7 @@ var startAnimation = function(){
                fraction = getDisOf(balls[i], balls[j]) / dis_limit;
     
                if(fraction < 1){
-                   alpha = (1 - 0.8 * fraction).toString();
+                   alpha = (1 - 0.95 * fraction).toString();
                    ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
                    ctx.lineWidth = link_line_width;
     
@@ -272,7 +272,7 @@ var startAnimation = function(){
                 vx: getRandomSpeed('top')[0],
                 vy: getRandomSpeed('top')[1],
                 r: R,
-                alpha: 0.75,
+                alpha: 0.1,
                 phase: randomNumFrom(0, 10)
             });
         }
