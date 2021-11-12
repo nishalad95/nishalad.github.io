@@ -44,7 +44,7 @@ var startAnimation = function(){
             dis_limit = 200;
        } else if (window_width < 1024 && window_width > 768) {
             // laptops
-            dis_limit = 260;
+            dis_limit = 230;
        } else if (window_width >= 1024) {
             // large screens desktops
             dis_limit = 300;
@@ -60,8 +60,8 @@ var startAnimation = function(){
         window_width = $(window).width();
         if (window_width < 1024 && window_width > 768) {
             // laptops
-            min = -.5,
-            max = .5;
+            min = -.4,
+            max = .4;
         } else if (window_width >= 1024) {
             // large screens desktops
             min = -1.,
@@ -103,7 +103,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('top')[0],
                     vy: getRandomSpeed('top')[1],
                     r: R,
-                    alpha: 0.8,
+                    alpha: 0.7,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -114,7 +114,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('right')[0],
                     vy: getRandomSpeed('right')[1],
                     r: R,
-                    alpha: 0.8,
+                    alpha: 0.7,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -125,7 +125,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('bottom')[0],
                     vy: getRandomSpeed('bottom')[1],
                     r: R,
-                    alpha: 0.8,
+                    alpha: 0.7,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -136,7 +136,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('left')[0],
                     vy: getRandomSpeed('left')[1],
                     r: R,
-                    alpha: 0.8,
+                    alpha: 0.7,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -149,8 +149,8 @@ var startAnimation = function(){
     // Draw Ball
     function renderBalls(){
         Array.prototype.forEach.call(balls, function(b, i){
-           idx = i % 3;
-        //    ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+        //    idx = i % 3;
+           idx = 1;
            ctx.fillStyle = ball.hex_color[idx];
            ctx.beginPath();
            ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
@@ -241,7 +241,7 @@ var startAnimation = function(){
             num_balls = 25;
         } else if (window_width < 1024 && window_width > 768) {
             // laptops
-            num_balls = 30;
+            num_balls = 25;
         } else if (window_width >= 1024) {
             // large screens desktops
             num_balls = 40;
@@ -272,7 +272,7 @@ var startAnimation = function(){
                 vx: getRandomSpeed('top')[0],
                 vy: getRandomSpeed('top')[1],
                 r: R,
-                alpha: 0.95,
+                alpha: 0.75,
                 phase: randomNumFrom(0, 10)
             });
         }
