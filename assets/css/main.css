@@ -1743,6 +1743,23 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
+/* Side by Side divs */
+	@media only screen and (min-width: 760px) {
+	
+		.sidebyside1 {
+			width: 50%;
+			position: relative;
+			display:inline-block;
+		}
+
+		.sidebyside2 {
+			width: 48%;
+			margin-left: 1%;
+			position:relative;
+			display:inline-block;
+		}
+	}
+
 /* Image */
 
 	.image {
