@@ -13,9 +13,9 @@ var startAnimation = function(){
           vx: 0,
           vy: 0,
           r: 0,
-          alpha: 0.1,
+          alpha: 0.01,
           phase: 0,
-          hex_color: ['#ffc559', '#E9D2F4', '#49306B']
+          hex_color: ['#ffc559a2', '#E9D2F4', '#49306B']
        },
        R = 4,
        balls = [], 
@@ -38,7 +38,7 @@ var startAnimation = function(){
        window_width = $(window).width();
        if (window_width <= 500) {
            // small screens phones
-           dis_limit = 150;
+           dis_limit = 200;
        } else if (window_width <= 768) {
             // small screens tablets
             dis_limit = 200;
@@ -53,8 +53,8 @@ var startAnimation = function(){
 
     // Random speed
     function getRandomSpeed(pos){
-        var  min = -.4,
-           max = .4;
+        var  min = -.2,
+           max = .2;
 
         // variable speed
         window_width = $(window).width();
@@ -62,11 +62,12 @@ var startAnimation = function(){
             // laptops
             min = -.025,
             max = .025;
-        } else if (window_width >= 1024) {
-            // large screens desktops
-            min = -.7,
-            max = .7;
-        }
+        } 
+        //else if (window_width >= 1024) {
+        //     // large screens desktops
+        //     // min = -3,
+        //     // max = 3;
+        // }
         
         switch(pos){
             case 'top':
@@ -184,7 +185,8 @@ var startAnimation = function(){
     
                if(fraction < 1){
                    alpha = (1 - 0.95 * fraction).toString();
-                   ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
+                //    ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
+                    ctx.strokeStyle = 'rgba(144,144,144,'+alpha+')';
                    ctx.lineWidth = link_line_width;
     
                    ctx.beginPath();
@@ -208,7 +210,7 @@ var startAnimation = function(){
     function addBallIfy(){
         window_width = $(window).width();
 
-        if (window_width <= 500 && balls.length < 12) {
+        if (window_width <= 500 && balls.length < 17) {
             // small screens phones
             balls.push(getRandomBall());
         } else if (window_width <= 768 && balls.length < 20) {
@@ -232,20 +234,20 @@ var startAnimation = function(){
       if (balls.length == 0) {
         // variable number of balls
         window_width = $(window).width();
-        num_balls = 30;
-        if (window_width <= 500) {
-           // small screens phones
-           num_balls = 15;
-        } else if (window_width <= 768) {
-            // small screens tablets
-            num_balls = 25;
-        } else if (window_width < 1024 && window_width > 768) {
-            // laptops
-            num_balls = 25;
-        } else if (window_width >= 1024) {
-            // large screens desktops
-            num_balls = 40;
-        }
+        num_balls = 10;
+        // if (window_width <= 500) {
+        //    // small screens phones
+        //    num_balls = 15;
+        // } else if (window_width <= 768) {
+        //     // small screens tablets
+        //     num_balls = 18;
+        // } else if (window_width < 1024 && window_width > 768) {
+        //     // laptops
+        //     num_balls = 15;
+        // } else if (window_width >= 1024) {
+        //     // large screens desktops
+        //     num_balls = 15;
+        // }
 
         initBalls(num_balls);
       }
