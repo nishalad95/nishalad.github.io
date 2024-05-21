@@ -88,7 +88,7 @@ input, select, textarea {
 		font-size: 19pt;
 		font-weight: 300;
 		line-height: 1.75em;
-		color: #888;
+		color: #6a6969;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -112,7 +112,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: #4f4e4e;
 		line-height: 1.5em;
 	}
 
@@ -143,7 +143,7 @@ input, select, textarea {
 	}
 
 	header {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 		header > p {
@@ -208,6 +208,13 @@ input, select, textarea {
 
 	br.clear {
 		clear: both;
+	}
+
+/* Paragraph text */
+	@media screen and (min-width: 736px) {
+		.paragraph-txt {
+			font-size: 75%;
+		}
 	}
 
 /* Container */
@@ -2207,7 +2214,7 @@ input, select, textarea {
 		color: #fff;	
 		padding: 3em 0 4em 0;
 		box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
-		font-size: 0.8em;
+		font-size: 0.5em;
 	}
 
 		#footer .copyright {

@@ -47,26 +47,26 @@ var startAnimation = function(){
             dis_limit = 230;
        } else if (window_width >= 1024) {
             // large screens desktops
-            dis_limit = 300;
+            dis_limit = 260;
        }
     
 
     // Random speed
     function getRandomSpeed(pos){
-        var  min = -.2,
-           max = .2;
+        var  min = -.03,
+           max = .03;
 
-        // variable speed
-        window_width = $(window).width();
-        if (window_width < 1024 && window_width > 768) {
-            // laptops
-            min = -.025,
-            max = .025;
-        } 
-        //else if (window_width >= 1024) {
+        // // variable speed
+        // window_width = $(window).width();
+        // if (window_width < 1024 && window_width > 768) {
+        //     // laptops
+        //     min = -.04,
+        //     max = .04;
+        // } 
+        // else if (window_width >= 1024) {
         //     // large screens desktops
-        //     // min = -3,
-        //     // max = 3;
+        //     min = -.04,
+        //     max = .04;
         // }
         
         switch(pos){
@@ -104,7 +104,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('top')[0],
                     vy: getRandomSpeed('top')[1],
                     r: R,
-                    alpha: 0.1,
+                    alpha: 0.05,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -115,7 +115,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('right')[0],
                     vy: getRandomSpeed('right')[1],
                     r: R,
-                    alpha: 0.1,
+                    alpha: 0.05,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -126,7 +126,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('bottom')[0],
                     vy: getRandomSpeed('bottom')[1],
                     r: R,
-                    alpha: 0.1,
+                    alpha: 0.05,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -137,7 +137,7 @@ var startAnimation = function(){
                     vx: getRandomSpeed('left')[0],
                     vy: getRandomSpeed('left')[1],
                     r: R,
-                    alpha: 0.1,
+                    alpha: 0.05,
                     phase: randomNumFrom(0, 10)
                 }
                 break;
@@ -167,7 +167,7 @@ var startAnimation = function(){
             b.x += b.vx;
             b.y += b.vy;
     
-            if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50)){
+            if(b.x > -(5) && b.x < (can_w+5) && b.y > -(5) && b.y < (can_h+5)){
                new_balls.push(b);
             }
         });
@@ -184,9 +184,9 @@ var startAnimation = function(){
                fraction = getDisOf(balls[i], balls[j]) / dis_limit;
     
                if(fraction < 1){
-                   alpha = (1 - 0.95 * fraction).toString();
-                //    ctx.strokeStyle = 'rgba(201,201,201,'+alpha+')';
-                    ctx.strokeStyle = 'rgba(144,144,144,'+alpha+')';
+                   alpha = (1 - 0.98 * fraction).toString();
+                   ctx.strokeStyle = 'rgba(120,120,120,'+alpha+')';
+                    // ctx.strokeStyle = 'rgba(144,144,144,'+alpha+')';
                    ctx.lineWidth = link_line_width;
     
                    ctx.beginPath();
@@ -216,7 +216,7 @@ var startAnimation = function(){
         } else if (window_width <= 768 && balls.length < 20) {
             // small screens tablets
             balls.push(getRandomBall());
-        } else if (window_width > 1024 && balls.length < 35) {
+        } else if (window_width > 1024 && balls.length < 30) {
             // large screens desktops
             balls.push(getRandomBall());
         } else if (balls.length < 20) {
