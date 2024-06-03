@@ -15,7 +15,8 @@ var startAnimation = function(){
           r: 0,
           alpha: 0.01,
           phase: 0,
-          hex_color: ['#ffc559a2', '#E9D2F4', '#49306B']
+        //   hex_color: ['#ffc559a2', '#E9D2F4', '#49306B']
+          hex_color: ['#484747de']
        },
        R = 4,
        balls = [], 
