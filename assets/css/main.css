@@ -2208,7 +2208,7 @@ input, select, textarea {
 	#footer {
 		margin-left: 375px;
 		text-align: center;
-		background-color: #555;
+		background-color: #5555557c;
 		/* background-color: #e9ecef; */
 		
 		color: #fff;	
@@ -2286,7 +2286,7 @@ input, select, textarea {
 			}
 
 			#main > section.one {
-				background-color: #555;
+				background-color: #5555557c;
 			
 			}
 
@@ -2644,7 +2644,7 @@ input, select, textarea {
 		/* Main */
 
 			#main > section.one {
-				background-color: #555;
+				background-color: #5555557c;
 				/* background-image: url("../../images/bkg_mobile.gif"); */
 				/* background-size: 180%; */
 			}
