@@ -235,20 +235,14 @@ var startAnimation = function(){
       if (balls.length == 0) {
         // variable number of balls
         window_width = $(window).width();
-        num_balls = 10;
-        // if (window_width <= 500) {
-        //    // small screens phones
-        //    num_balls = 15;
-        // } else if (window_width <= 768) {
-        //     // small screens tablets
-        //     num_balls = 18;
-        // } else if (window_width < 1024 && window_width > 768) {
-        //     // laptops
-        //     num_balls = 15;
-        // } else if (window_width >= 1024) {
-        //     // large screens desktops
-        //     num_balls = 15;
-        // }
+        num_balls = 20;
+        if (window_width <= 768) {
+           // small screens phones
+           num_balls = 15;
+        } else if (window_width >= 1024) {
+            // large screens desktops
+            num_balls = 30;
+        }
 
         initBalls(num_balls);
       }
